@@ -1,18 +1,26 @@
 import random as rnd
 
-cislo = int(input("zadej číslo od 0 do 100, které PC uhodne "))
-cislo_pc = 100
-rozsah = 100
+name = "Hugo"
+vek = 20
 
-cislo_pc = rozsah/2
+#formatovany retezec
 
-while True:
+print(f"Ahoj {name} je ti \n{vek}")
 
-    if cislo_pc > cislo:
-        cislo_pc -= cislo_pc/2   
-    elif cislo_pc < cislo: 
-        cislo_pc += cislo_pc/2   
-    else:
-        break
 
-print("pocitac uhadl tvoje cislo. Je to", cislo)
+#cislo = int(input("zadej číslo od 0 do 100, které PC uhodne "))
+#cislo_pc = 100
+#rozsah = 100
+#
+#cislo_pc = rozsah/2
+#
+#while True:
+#
+#    if cislo_pc > cislo:
+#        cislo_pc -= cislo_pc/2   
+#    elif cislo_pc < cislo: 
+#        cislo_pc += cislo_pc/2   
+#    else:
+#        break
+#
+#print("pocitac uhadl tvoje cislo. Je to", cislo)
