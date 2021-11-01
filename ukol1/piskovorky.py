@@ -55,13 +55,8 @@ if typ_site == 0:
         penup()
         goto (0,(i+1)*a)
         pendown()
-        #backward(x*a)
-        #left(90)
-        #forward(a)
-        #right(90)
 else:
     #sit sestiuhlenik
-    "zkusit zjednodusit"
     for i in range(x):
         pendown()
         for _ in range(x):
@@ -106,29 +101,23 @@ while True:
         
         if  (x1 < 0) or (x1 > (x-1)):
             print("neplatná souřadnice x")
-        if (y1 < 0) or (y1 > (x-1)):
-            print("neplatná souřadnice y")
+            if (y1 < 0) or (y1 > (x-1)):
+                print("neplatná souřadnice y")
         else:break
 
-    "zkultivovat vypocet souradnic"
     if typ_site == 0:
         #umisteni krouzku ve ctvercove siti
         x1 = a*xy1[0]
-        #y1 = xy1[1]
         y1 = a*xy1[1]
         goto(x1+(a/2),y1)
-        #goto(x1+(a/2),y1*a)
     else:
         #umisteni krouzku v sestiuhlenikove siti
         vyska = a*sqrt(3)
         x1 = (a +(a/2))*xy1[0]
-        #y1 = xy1[1]
         y1 = vyska*xy1[1]
         if x1%2 == 0:
             goto(x1+(a/2),(y1+(0.1*a)))
-            #goto(x1+(a/2),(y1*(a*sqrt(3)))+(0.1*a))
         else:
-            #goto(x1+(a/2),(y1*(a*sqrt(3)))+(0.1*a)+((a*sqrt(3))/2))
             goto(x1+(a/2),(y1+(vyska)/2)+(0.1*a))
     
     pendown()
@@ -143,9 +132,11 @@ while True:
     
     penup()
     home()
+    #pocitani odehranych her
     j += 1
 
-    if j == x**2:
+    #ukonceni hry po odehrani tolika her kolik je buněk na hraci plose
+    if j == x*x:
         break
     
     # hrac2, krizek
@@ -157,8 +148,8 @@ while True:
 
         if  (x2 < 0) or (x2 > x-1):
             print("neplatná souřadnice x")
-        if (y2 < 0) or (y2 > x-1):
-            print("neplatná souřadnice y")
+            if (y2 < 0) or (y2 > x-1):
+                print("neplatná souřadnice y")
         else:break
 
     if typ_site == 0:
@@ -170,13 +161,10 @@ while True:
         #umisteni krizku v sestiuhlenikove siti
         x2 = (a +(a/2))*xy2[0]
         y2 = vyska*xy2[1]
-        #y2 = (a*sqrt(3))*xy2[1]
         if x2%2 == 0:
             goto(x2+(a/2),y2+(vyska/2))
-            #goto(x2+(a/2),y2+((a*sqrt(3))/2))
         else:
            goto(x2+(a/2),y2+vyska)
-           #goto(x2+(a/2),y2+(a*sqrt(3)))
     
     pendown()
     color("red")
@@ -189,10 +177,12 @@ while True:
     
     penup()
     home()
-    color("black")
+
+    #pocitani odehranych her
     j += 1
 
-    if j == x^2:
+    #ukonceni hry po odehrani tolika her kolik je bunek na hraci plose
+    if j == x*x:
         break
     
     #konec kola
